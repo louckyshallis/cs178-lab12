@@ -29,14 +29,21 @@ def hello(name):
 #  Each exercise asks you to add a new @app.route here
 # ============================================================
 # ---- Exercise 1: add this to flaskapp.py ----
+# ---- Exercise 2: update your analyze route ----
 @app.route('/analyze/<word>')
 def analyze(word):
-    i = str(len(word))
-    return i
-    # Count the characters in `word` and return as a string
-    # Example: /analyze/Drake  →  should display: 5
-    pass
+    # Step 1: character count (already done)
+    num_chars = len(word)
 
+    num_vowels = 0
+    for i in word:
+        if i.lower() in 'aeiou':
+            num_vowels += 1
+    # render_template passes all variables into analyze.html
+    return render_template('analyze.html',
+                           word=word,
+                           num_chars=num_chars,
+                           num_vowels=num_vowels)
 
 
 # ============================================================

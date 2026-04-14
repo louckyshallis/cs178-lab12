@@ -38,7 +38,7 @@ def analyze(word):
         if i.lower() in 'aeiou':
             num_vowels += 1
     
-    reversed_word = word.reverse()
+    reversed_word = word[::-1]
     
     return render_template(
         'analyze.html',

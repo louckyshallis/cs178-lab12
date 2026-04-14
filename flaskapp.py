@@ -28,7 +28,7 @@ def hello(name):
 #  YOUR ROUTES GO BELOW THIS LINE
 #  Each exercise asks you to add a new @app.route here
 # ============================================================
-# ---- Exercise 1: add this to flaskapp.py ----
+
 # ---- Exercise 2: update your analyze route ----
 @app.route('/analyze/<word>')
 def analyze(word):
@@ -45,7 +45,8 @@ def analyze(word):
                            num_chars=num_chars,
                            num_vowels=num_vowels)
 
-
+if __name__ == '__main__':
+    app.run(debug=True)
 # ============================================================
 #  These two lines always stay at the bottom of the file.
 #  host='0.0.0.0' means "listen on all network interfaces"

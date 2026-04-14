@@ -29,7 +29,6 @@ def hello(name):
 #  Each exercise asks you to add a new @app.route here
 # ============================================================
 
-# ---- Exercise 2: update your analyze route ----
 @app.route('/analyze/<word>')
 def analyze(word):
     num_chars = len(word)
@@ -38,13 +37,15 @@ def analyze(word):
     for i in word:
         if i.lower() in 'aeiou':
             num_vowels += 1
-
+    
+    reversed_word = word.reverse()
+    
     return render_template(
         'analyze.html',
         word=word,
         num_chars=num_chars,
-        num_vowels=num_vowels
-    )
+        num_vowels=num_vowels,
+        reversed_word = reversed_word)
 
 # ============================================================
 #  These two lines always stay at the bottom of the file.

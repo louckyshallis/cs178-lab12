@@ -45,8 +45,7 @@ def analyze(word):
                            num_chars=num_chars,
                            num_vowels=num_vowels)
 
-if __name__ == '__main__':
-    app.run(debug=True)
+
 # ============================================================
 #  These two lines always stay at the bottom of the file.
 #  host='0.0.0.0' means "listen on all network interfaces"
